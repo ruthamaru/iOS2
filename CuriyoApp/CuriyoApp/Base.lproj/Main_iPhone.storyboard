@@ -1,0 +1,729 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="C1t-xm-OiF">
+    <dependencies>
+        <deployment defaultVersion="1808" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="CUViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" fixedFrame="YES" barStyle="blackTranslucent" searchBarStyle="minimal" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="oPC-Xq-XUK">
+                                <rect key="frame" x="0.0" y="65" width="320" height="44"/>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="SaL-Kp-61x"/>
+                                </connections>
+                            </searchBar>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="mi3-O3-ckh">
+                                <rect key="frame" x="145" y="278" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="DE6-Fa-A0k">
+                                <rect key="frame" x="0.0" y="112" width="320" height="459"/>
+                                <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="separatorColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="sectionIndexTrackingBackgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CardCell" rowHeight="60" id="pGJ-qP-f3u">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pGJ-qP-f3u" id="Pux-ZV-2ap">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WikipediaCardCell" rowHeight="210" id="TaK-77-ycM" customClass="CUWikipediaTableViewCell">
+                                        <rect key="frame" x="0.0" y="82" width="320" height="251"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TaK-77-ycM" id="Rfh-BS-8Re">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="251"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="card_top.png" translatesAutoresizingMaskIntoConstraints="NO" id="vc4-uQ-GDH">
+                                                    <rect key="frame" x="8" y="8" width="304" height="5"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="card_middle.png" translatesAutoresizingMaskIntoConstraints="NO" id="ovE-CH-NYp">
+                                                    <rect key="frame" x="8" y="13" width="304" height="184"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="card_bottom.png" translatesAutoresizingMaskIntoConstraints="NO" id="XYm-K6-edq">
+                                                    <rect key="frame" x="8" y="197" width="304" height="5"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wikipedia_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="CH5-ef-G5W">
+                                                    <rect key="frame" x="16" y="17" width="16" height="16"/>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label (wikipedia)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xJ5-1s-4kP">
+                                                    <rect key="frame" x="44" y="17" width="151" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="stroke.png" translatesAutoresizingMaskIntoConstraints="NO" id="R6o-ZL-Dhm">
+                                                    <rect key="frame" x="8" y="43" width="304" height="1"/>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="284" translatesAutoresizingMaskIntoConstraints="NO" id="1Fz-rm-QfW">
+                                                    <rect key="frame" x="16" y="53" width="284" height="134"/>
+                                                    <string key="text">dsdhshdsk shddkjhsd s hjsdhksd dshjdk shdjskd shjkds khsd shdkdsdksjdsj jdskjd dsjkjlk sdklj dsjkkld djskljk jklj jdskl djsk dsjklj djskl djskl dsdhshdsk shddkjhsd s hjsdhksd dshjdk shdjskd shjkds khs dsdhshdsk shddkjhsd s hjsdhksd dshjdk shdjskd shjkds khs dsdhshdsk shddkjhsd s hjsdhksd dshjdk shdjskd shjkds khs</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="contentLabel" destination="1Fz-rm-QfW" id="RCE-we-tNi"/>
+                                            <outlet property="titleLabel" destination="xJ5-1s-4kP" id="Fgp-ij-TTS"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="YouTubeCardCell" rowHeight="260" id="muz-f2-OFl" customClass="CUYouTubeTableViewCell">
+                                        <rect key="frame" x="0.0" y="333" width="320" height="150"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="muz-f2-OFl" id="WWW-02-sKz">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="card_top.png" translatesAutoresizingMaskIntoConstraints="NO" id="Chm-Uf-UMg">
+                                                    <rect key="frame" x="8" y="8" width="304" height="5"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="card_middle.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ddk-8Y-g7J">
+                                                    <rect key="frame" x="8" y="13" width="304" height="225"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="card_bottom.png" translatesAutoresizingMaskIntoConstraints="NO" id="sF9-zT-NE9">
+                                                    <rect key="frame" x="8" y="237" width="304" height="5"/>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label (youtube)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vne-ph-D4V">
+                                                    <rect key="frame" x="44" y="17" width="151" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="stroke.png" translatesAutoresizingMaskIntoConstraints="NO" id="y8p-bP-89E">
+                                                    <rect key="frame" x="8" y="43" width="304" height="1"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="youtube_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Qy7-Ip-3T0">
+                                                    <rect key="frame" x="16" y="17" width="16" height="16"/>
+                                                </imageView>
+                                                <webView tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K5z-jE-XNo">
+                                                    <rect key="frame" x="9" y="43" width="302" height="195"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="vXZ-lx-hvc" id="EEC-eI-Gb0"/>
+                                                    </connections>
+                                                </webView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="youTubeWebView" destination="K5z-jE-XNo" id="Na1-Kq-3ic"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="infinite" selectionStyle="default" indentationWidth="10" reuseIdentifier="ImagesCardCell" rowHeight="417" id="FcF-de-shC" customClass="CUImagesTableViewCell">
+                                        <rect key="frame" x="0.0" y="483" width="320" height="202"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="infinite" tableViewCell="FcF-de-shC" id="IxT-Nb-gKz">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="202"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="card_top.png" translatesAutoresizingMaskIntoConstraints="NO" id="khA-14-ZpX">
+                                                    <rect key="frame" x="8" y="9" width="304" height="5"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="card_middle.png" translatesAutoresizingMaskIntoConstraints="NO" id="oEX-db-UN1">
+                                                    <rect key="frame" x="8" y="14" width="304" height="385"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="card_bottom.png" translatesAutoresizingMaskIntoConstraints="NO" id="pmg-fR-kLo">
+                                                    <rect key="frame" x="8" y="398" width="304" height="5"/>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label (Images)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GAP-l9-x7X">
+                                                    <rect key="frame" x="44" y="17" width="151" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="yahoo_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="y2c-iy-PRb">
+                                                    <rect key="frame" x="16" y="17" width="15" height="18"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="stroke.png" translatesAutoresizingMaskIntoConstraints="NO" id="rcL-3s-Nyr">
+                                                    <rect key="frame" x="8" y="43" width="304" height="1"/>
+                                                </imageView>
+                                                <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" placeholderIntrinsicWidth="152" placeholderIntrinsicHeight="146" translatesAutoresizingMaskIntoConstraints="NO" id="UZS-kv-RJK">
+                                                    <rect key="frame" x="9" y="43" width="302" height="346"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="image1" destination="UZS-kv-RJK" id="Y22-Bg-zgU"/>
+                                            <outlet property="titleLabel" destination="GAP-l9-x7X" id="7DD-vV-623"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsCardCell" rowHeight="194" id="7FC-lf-mnk" customClass="CUNewsTableViewCell">
+                                        <rect key="frame" x="0.0" y="685" width="320" height="284"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7FC-lf-mnk" id="wJk-jL-idq">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="284"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="card_middle.png" translatesAutoresizingMaskIntoConstraints="NO" id="Tun-D5-0mU">
+                                                    <rect key="frame" x="8" y="13" width="304" height="169"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="card_bottom.png" translatesAutoresizingMaskIntoConstraints="NO" id="xiP-fa-L5L">
+                                                    <rect key="frame" x="8" y="182" width="304" height="5"/>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label(News)" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXF-fh-BTb">
+                                                    <rect key="frame" x="44" y="13" width="151" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="yahoo_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="S0g-R2-aJO">
+                                                    <rect key="frame" x="16" y="17" width="15" height="18"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="stroke.png" translatesAutoresizingMaskIntoConstraints="NO" id="v1N-3J-tjo">
+                                                    <rect key="frame" x="8" y="43" width="304" height="1"/>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="News Content" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="288" translatesAutoresizingMaskIntoConstraints="NO" id="CML-y1-I0U">
+                                                    <rect key="frame" x="16" y="75" width="288" height="96"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="YGyglbxcvcnberwdkh" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fzu-pD-BPZ">
+                                                    <rect key="frame" x="16" y="52" width="288" height="15"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="card_top.png" translatesAutoresizingMaskIntoConstraints="NO" id="9oA-0w-eJ8">
+                                                    <rect key="frame" x="8" y="8" width="304" height="5"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="abstractLabel" destination="CML-y1-I0U" id="nAH-A6-JIw"/>
+                                            <outlet property="headlineLabel" destination="fzu-pD-BPZ" id="IdN-lT-Syz"/>
+                                            <outlet property="titleLabel" destination="LXF-fh-BTb" id="X7H-Fu-PC9"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TweetsCardCell" rowHeight="207" id="nAP-SA-cFa" customClass="CUTweetsTableViewCell">
+                                        <rect key="frame" x="0.0" y="969" width="320" height="241"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nAP-SA-cFa" id="irf-ng-e1G">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="241"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="card_top.png" translatesAutoresizingMaskIntoConstraints="NO" id="5VO-hM-PyM">
+                                                    <rect key="frame" x="8" y="8" width="304" height="5"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="card_middle.png" translatesAutoresizingMaskIntoConstraints="NO" id="JUK-mB-Pji">
+                                                    <rect key="frame" x="8" y="13" width="304" height="184"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="stroke.png" translatesAutoresizingMaskIntoConstraints="NO" id="RdC-if-SS3">
+                                                    <rect key="frame" x="8" y="42" width="304" height="1"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="twitter_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="beC-g2-Y61">
+                                                    <rect key="frame" x="16" y="17" width="20" height="16"/>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label(Tweets)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="brd-wX-viW">
+                                                    <rect key="frame" x="44" y="17" width="151" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p3H-rn-sa3">
+                                                    <rect key="frame" x="16" y="52" width="49" height="49"/>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YcC-5Q-RHR">
+                                                    <rect key="frame" x="75" y="51" width="225" height="21"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="225" translatesAutoresizingMaskIntoConstraints="NO" id="x7j-7y-8na">
+                                                    <rect key="frame" x="75" y="72" width="225" height="84"/>
+                                                    <string key="text">dsdhshdsk shddkjhsd s hjsdhksd dshjdk shdjskd shjkds khsd shdkdsdksjdsj jdskjd dsjkjlk sdklj dsjkkld djskljk jklj jdskl djsk dsjklj djskl djskl</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ajw-PW-SOA">
+                                                    <rect key="frame" x="153" y="171" width="42" height="15"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xl9-uy-W2p">
+                                                    <rect key="frame" x="235" y="171" width="42" height="15"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="twitter_icon_reply.png" translatesAutoresizingMaskIntoConstraints="NO" id="UcU-hA-gOb">
+                                                    <rect key="frame" x="75" y="171" width="16" height="15"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="twitter_icon_retweet.png" translatesAutoresizingMaskIntoConstraints="NO" id="dsf-cG-x1C">
+                                                    <rect key="frame" x="133" y="171" width="16" height="15"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="twitter_icon_favorite.png" translatesAutoresizingMaskIntoConstraints="NO" id="GRh-4U-spx">
+                                                    <rect key="frame" x="216" y="171" width="16" height="15"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="card_bottom.png" translatesAutoresizingMaskIntoConstraints="NO" id="8Vf-Nh-RSA">
+                                                    <rect key="frame" x="8" y="194" width="304" height="5"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="avatarImageView" destination="p3H-rn-sa3" id="fZp-Mu-k5V"/>
+                                            <outlet property="favoritesLabel" destination="xl9-uy-W2p" id="czc-za-LKD"/>
+                                            <outlet property="retweetsLabel" destination="ajw-PW-SOA" id="0Cp-78-zyo"/>
+                                            <outlet property="titleLabel" destination="brd-wX-viW" id="4W1-De-GCt"/>
+                                            <outlet property="tweetLabel" destination="x7j-7y-8na" id="u3M-js-S4y"/>
+                                            <outlet property="userNameLabel" destination="YcC-5Q-RHR" id="44b-ry-o7N"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MapCardCell" rowHeight="233" id="mkT-YP-euH" customClass="CUMapTableViewCell">
+                                        <rect key="frame" x="0.0" y="1210" width="320" height="268"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mkT-YP-euH" id="zdJ-Ft-0x0">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="268"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="card_top.png" translatesAutoresizingMaskIntoConstraints="NO" id="lm2-D5-kDQ">
+                                                    <rect key="frame" x="8" y="8" width="304" height="5"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="card_middle.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ap0-Ya-ew5">
+                                                    <rect key="frame" x="8" y="13" width="304" height="209"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="card_bottom.png" translatesAutoresizingMaskIntoConstraints="NO" id="i3N-K7-NWL">
+                                                    <rect key="frame" x="8" y="222" width="304" height="5"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="stroke.png" translatesAutoresizingMaskIntoConstraints="NO" id="7k5-O0-Hk3">
+                                                    <rect key="frame" x="8" y="42" width="304" height="1"/>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label(Map)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kII-ma-MXq">
+                                                    <rect key="frame" x="44" y="17" width="151" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <webView clipsSubviews="YES" contentMode="scaleAspectFill" fixedFrame="YES" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qHD-tg-48x">
+                                                    <rect key="frame" x="8" y="43" width="304" height="171"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="vXZ-lx-hvc" id="9UO-qh-jmB"/>
+                                                    </connections>
+                                                </webView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="google_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="8Gk-3v-umT">
+                                                    <rect key="frame" x="16" y="17" width="17" height="16"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="mapWebView" destination="qHD-tg-48x" id="Nvg-Uw-BnA"/>
+                                            <outlet property="titleLabel" destination="kII-ma-MXq" id="Ji1-Lw-akz"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RedditContentCardCell" rowHeight="223" id="TMv-V5-cPy" customClass="CURedditContentTableViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TMv-V5-cPy" id="EN5-hX-oGc">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="card_top.png" translatesAutoresizingMaskIntoConstraints="NO" id="C9e-SU-Ekh">
+                                                    <rect key="frame" x="8" y="8" width="304" height="5"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="card_middle.png" translatesAutoresizingMaskIntoConstraints="NO" id="6pb-bm-Adx">
+                                                    <rect key="frame" x="8" y="13" width="304" height="197"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="card_bottom.png" translatesAutoresizingMaskIntoConstraints="NO" id="ksx-QS-6aQ">
+                                                    <rect key="frame" x="8" y="210" width="304" height="5"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="stroke.png" translatesAutoresizingMaskIntoConstraints="NO" id="FHe-69-0mR">
+                                                    <rect key="frame" x="8" y="34" width="304" height="1"/>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GpN-Si-EAa">
+                                                    <rect key="frame" x="44" y="17" width="151" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="reddit_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="qxv-YM-MFl">
+                                                    <rect key="frame" x="16" y="17" width="18" height="16"/>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Fe-ln-xBF">
+                                                    <rect key="frame" x="16" y="45" width="288" height="15"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LKp-UY-KgJ">
+                                                    <rect key="frame" x="-4" y="165" width="328" height="51"/>
+                                                    <subviews>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VyB-cn-XYn">
+                                                            <rect key="frame" x="20" y="6" width="288" height="15"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xxh-Sb-YmI">
+                                                            <rect key="frame" x="20" y="27" width="136" height="15"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3oe-1c-yuk">
+                                                            <rect key="frame" x="173" y="27" width="131" height="15"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W0k-MP-xAZ">
+                                                    <rect key="frame" x="16" y="68" width="288" height="97"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="contentLabel" destination="W0k-MP-xAZ" id="jep-97-vHw"/>
+                                            <outlet property="header" destination="9Fe-ln-xBF" id="A01-cs-aiE"/>
+                                            <outlet property="numComments" destination="3oe-1c-yuk" id="SrG-4p-wxv"/>
+                                            <outlet property="numPoints" destination="Xxh-Sb-YmI" id="noK-kH-WNH"/>
+                                            <outlet property="submitted" destination="VyB-cn-XYn" id="agR-j7-j8j"/>
+                                            <outlet property="titleLabel" destination="GpN-Si-EAa" id="qZT-sg-QlJ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RedditCardCell" rowHeight="572" id="TaF-Ty-LoB" customClass="CURedditTableViewCell">
+                                        <rect key="frame" x="0.0" y="1478" width="320" height="316"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TaF-Ty-LoB" id="Q06-4z-mYP">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="316"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="card_top.png" translatesAutoresizingMaskIntoConstraints="NO" id="gcv-Fq-b7u">
+                                                    <rect key="frame" x="8" y="8" width="304" height="5"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="card_middle.png" translatesAutoresizingMaskIntoConstraints="NO" id="V4N-GC-5RO">
+                                                    <rect key="frame" x="8" y="13" width="304" height="546"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="card_bottom.png" translatesAutoresizingMaskIntoConstraints="NO" id="zgw-Iw-rgf">
+                                                    <rect key="frame" x="8" y="559" width="304" height="5"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="stroke.png" translatesAutoresizingMaskIntoConstraints="NO" id="2O1-rN-4hD">
+                                                    <rect key="frame" x="8" y="42" width="304" height="1"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="reddit_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="oza-0K-W12">
+                                                    <rect key="frame" x="16" y="17" width="18" height="16"/>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ciX-5q-eOl">
+                                                    <rect key="frame" x="44" y="17" width="151" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JLw-g8-KfU">
+                                                    <rect key="frame" x="8" y="42" width="304" height="450"/>
+                                                </imageView>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k3f-zs-K9k">
+                                                    <rect key="frame" x="-4" y="481" width="328" height="82"/>
+                                                    <subviews>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xg4-1m-RsU">
+                                                            <rect key="frame" x="20" y="20" width="288" height="15"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Vr-B3-fwQ">
+                                                            <rect key="frame" x="20" y="37" width="288" height="15"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O6i-ce-xUJ">
+                                                            <rect key="frame" x="20" y="58" width="136" height="15"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nfB-c0-1Pv">
+                                                            <rect key="frame" x="173" y="58" width="131" height="15"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="header" destination="xg4-1m-RsU" id="qqu-Mh-ajK"/>
+                                            <outlet property="image" destination="JLw-g8-KfU" id="lPz-jJ-cww"/>
+                                            <outlet property="numComments" destination="nfB-c0-1Pv" id="wQ7-0x-KYL"/>
+                                            <outlet property="numPoints" destination="O6i-ce-xUJ" id="4UE-u7-b0j"/>
+                                            <outlet property="submitted" destination="8Vr-B3-fwQ" id="92a-f5-cnn"/>
+                                            <outlet property="titleLabel" destination="ciX-5q-eOl" id="pM7-0t-k7G"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="NL7-uT-DHu"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="Vqz-s9-hJR"/>
+                                </connections>
+                            </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="stroke.png" translatesAutoresizingMaskIntoConstraints="NO" id="PRv-hK-6i4">
+                                <rect key="frame" x="0.0" y="111" width="320" height="1"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="dII-0T-8RI"/>
+                    <connections>
+                        <outlet property="activityIndicationView" destination="mi3-O3-ckh" id="a1x-y5-gEX"/>
+                        <outlet property="searchBar" destination="oPC-Xq-XUK" id="bcH-1x-YVR"/>
+                        <outlet property="searchDisplayController" destination="SET-cm-pOI" id="Lbp-ix-nBK"/>
+                        <outlet property="tableView" destination="DE6-Fa-A0k" id="sHk-Y9-9DW"/>
+                        <segue destination="aUc-XE-Uc8" kind="push" identifier="pushDetailedWebView" id="qYh-5U-RAl"/>
+                    </connections>
+                </viewController>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stroke.png" id="dng-sX-fUu">
+                    <rect key="frame" x="0.0" y="0.0" width="304" height="1"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="SET-cm-pOI">
+                    <connections>
+                        <outlet property="delegate" destination="vXZ-lx-hvc" id="z9A-ql-BGU"/>
+                        <outlet property="searchContentsController" destination="vXZ-lx-hvc" id="3yc-4z-daz"/>
+                        <outlet property="searchResultsDataSource" destination="vXZ-lx-hvc" id="cK7-2i-lWl"/>
+                        <outlet property="searchResultsDelegate" destination="vXZ-lx-hvc" id="ozk-wx-b1o"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="969" y="95"/>
+        </scene>
+        <!--Detailed Web View Controller-->
+        <scene sceneID="Ewt-r7-PV4">
+            <objects>
+                <viewController id="aUc-XE-Uc8" customClass="CUDetailedWebViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PbB-ey-cQb"/>
+                        <viewControllerLayoutGuide type="bottom" id="nvn-PQ-qA5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jHs-Zq-536">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0M3-9j-aBh">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Gz7-mb-8xB">
+                                <rect key="frame" x="150" y="274" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="aBf-Zb-uHm"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="Gz7-mb-8xB" id="dTK-Ba-XyQ"/>
+                        <outlet property="detailedWebView" destination="0M3-9j-aBh" id="YoW-NS-I1c"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TuN-KR-Uva" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1352" y="95"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="UKt-Im-CUH">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="wwF-wH-QRV" customClass="CUHomeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="h0Y-QT-Ey4"/>
+                        <viewControllerLayoutGuide type="bottom" id="jrs-ye-Or7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="S0J-ep-7Uu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="grey_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="BUY-C0-15r">
+                                <rect key="frame" x="0.0" y="62" width="320" height="220"/>
+                            </imageView>
+                            <searchBar contentMode="redraw" fixedFrame="YES" barStyle="blackTranslucent" searchBarStyle="minimal" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="bIi-rD-oU1">
+                                <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="wwF-wH-QRV" id="fjK-hl-jl0"/>
+                                </connections>
+                            </searchBar>
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" fixedFrame="YES" pagingEnabled="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="JhR-7V-7th">
+                                <rect key="frame" x="0.0" y="108" width="320" height="140"/>
+                                <collectionViewLayout key="collectionViewLayout" id="Soz-xR-ooE" customClass="CUTrendsCollectionViewFlowLayout"/>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="trendCellID" id="y5N-s5-Mkz" customClass="CUTrendCollectionViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="140"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="140"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uR4-tZ-iPx">
+                                                    <rect key="frame" x="0.0" y="0.0" width="104" height="140"/>
+                                                </imageView>
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home_text_bknd.png" translatesAutoresizingMaskIntoConstraints="NO" id="yqg-nv-s2q">
+                                                    <rect key="frame" x="0.0" y="103" width="106" height="67"/>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="AFJSydakdg" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="93" translatesAutoresizingMaskIntoConstraints="NO" id="t5l-MG-eTS">
+                                                    <rect key="frame" x="7" y="90" width="93" height="50"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                    <color key="textColor" red="0.88831097146739135" green="0.88831097146739135" blue="0.88831097146739135" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <size key="customSize" width="320" height="140"/>
+                                        <connections>
+                                            <outlet property="trendImage" destination="uR4-tZ-iPx" id="oYP-Um-SfK"/>
+                                            <outlet property="trendLabel" destination="t5l-MG-eTS" id="zjf-mb-X80"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="wwF-wH-QRV" id="fwF-tc-OfR"/>
+                                    <outlet property="delegate" destination="wwF-wH-QRV" id="zTa-sU-R6h"/>
+                                </connections>
+                            </collectionView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ubR-zD-5Vd">
+                                <rect key="frame" x="0.0" y="269" width="320" height="299"/>
+                                <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HistoryCell" rowHeight="70" id="YRa-0H-smE" customClass="CUHistoryTableViewCell">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="70"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YRa-0H-smE" id="Xhz-Lo-Lh6">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="card_top.png" translatesAutoresizingMaskIntoConstraints="NO" id="UUb-GN-wFd">
+                                                    <rect key="frame" x="8" y="5" width="304" height="5"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="card_middle.png" translatesAutoresizingMaskIntoConstraints="NO" id="bh1-ex-R2v">
+                                                    <rect key="frame" x="8" y="10" width="304" height="50"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="card_bottom.png" translatesAutoresizingMaskIntoConstraints="NO" id="8dm-SH-CWe">
+                                                    <rect key="frame" x="8" y="60" width="304" height="5"/>
+                                                </imageView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qtp-Ld-oqw">
+                                                    <rect key="frame" x="13" y="10" width="66" height="51"/>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gqz-GJ-aKq">
+                                                    <rect key="frame" x="87" y="18" width="213" height="35"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                    <color key="textColor" red="0.011764705882352941" green="0.5607843137254902" blue="0.88235294117647056" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="historyImage" destination="qtp-Ld-oqw" id="Qzj-4j-9e9"/>
+                                            <outlet property="historyTermLabel" destination="Gqz-GJ-aKq" id="OKJ-qI-8Gb"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="wwF-wH-QRV" id="vH1-lb-8qo"/>
+                                    <outlet property="delegate" destination="wwF-wH-QRV" id="gOQ-Ti-PEV"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Q1h-bd-tdl"/>
+                    <connections>
+                        <outlet property="collectionView" destination="JhR-7V-7th" id="AKh-Z1-g2v"/>
+                        <outlet property="searchBar" destination="bIi-rD-oU1" id="oZV-I1-rDS"/>
+                        <outlet property="tableView" destination="ubR-zD-5Vd" id="vnl-Cg-J96"/>
+                        <segue destination="vXZ-lx-hvc" kind="push" identifier="openCardsFromHome" id="Aj9-Pf-cXj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MeA-qK-ira" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="591" y="95"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="myX-NR-0wM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="C1t-xm-OiF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oT0-pf-eRi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="wwF-wH-QRV" kind="relationship" relationship="rootViewController" id="uJe-ey-eS4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sNA-I1-wR8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="49" y="95"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="card_bottom.png" width="306" height="5"/>
+        <image name="card_middle.png" width="306" height="5"/>
+        <image name="card_top.png" width="306" height="5"/>
+        <image name="google_logo.png" width="17" height="16"/>
+        <image name="grey_background.png" width="320" height="5"/>
+        <image name="home_text_bknd.png" width="320" height="109"/>
+        <image name="reddit_logo.png" width="18" height="16"/>
+        <image name="stroke.png" width="320" height="1"/>
+        <image name="twitter_icon_favorite.png" width="15" height="15"/>
+        <image name="twitter_icon_reply.png" width="16" height="15"/>
+        <image name="twitter_icon_retweet.png" width="20" height="15"/>
+        <image name="twitter_logo.png" width="19" height="16"/>
+        <image name="wikipedia_icon.png" width="16" height="16"/>
+        <image name="yahoo_logo.png" width="15" height="18"/>
+        <image name="youtube_logo.png" width="22" height="14"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
